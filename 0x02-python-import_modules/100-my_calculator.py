@@ -8,12 +8,12 @@ if __name__ == "__main__":
         sys.exit(1)
 
         operator = sys.argv[2]
-        if operator != '+' and operator != '-' and operator != '*' and operator != '/'
-        print("Unknown operator. Available operators: +, -, * and /\n")
-        sys.exit(1)
-        a = int(sys.argv[1])
-        b = int(sys.argv[3])
-        if operator == '+':
+        if operator != '+' and operator != '-' and operator != '*' and operator != '/':
+            print("Unknown operator. Available operators: +, -, * and /\n")
+            sys.exit(1)
+            a = int(sys.argv[1])
+            b = int(sys.argv[3])
+            if operator == '+':
                 print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
             elif operator == '-':
                 print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
