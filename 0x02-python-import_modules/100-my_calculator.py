@@ -4,12 +4,12 @@ if __name__ == "__main__":
     from calculator_1 import mul, add, sub, div
     numargs = len(sys.argv) - 1
     if numargs != 3:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>\n")
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
 
         operator = sys.argv[2]
         if operator != '+' and operator != '-' and operator != '*' and operator != '/':
-            print("Unknown operator. Available operators: +, -, * and /\n")
+            print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
             a = int(sys.argv[1])
             b = int(sys.argv[3])
