@@ -11,9 +11,9 @@ elif n == 1:
 else:
     print("{} arguments:".format(n))
 
-    if i >= 1:
-        i = 0
+    if n >= 1:
+        n = 0
     for arg in sys.argv:
-        if i != 0:
-            print("{} : {}".format(i, arg))
-            i += 1
+        if n != 0:
+            print("{}: {}".format(n, arg))
+            n += 1
