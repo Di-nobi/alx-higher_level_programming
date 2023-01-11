@@ -8,9 +8,9 @@ if __name__ == "__main__":
         print("{} argument:".format(n))
     else:
         print("{} arguments:".format(n))
-        if n >= 1
-        n = 0
-        for arg in sys.argv:
-            if n != 0:
-                print("{}: {}".format(n, arg))
-                n += 1
+        if n >= 1:
+            n = 0
+            for arg in sys.argv:
+                if n != 0:
+                    print("{}: {}".format(n, arg))
+                    n += 1
