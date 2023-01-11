@@ -7,9 +7,13 @@ if n == 0:
     print("{} arguments.".format(n))
 elif n == 1:
     print("{} argument:".format(n))
+
 else:
     print("{} arguments:".format(n))
-    for i in range(1, n):
+
+    if i >= 1:
+        i = 0
+    for arg in sys.argv:
         if i != 0:
-            print("{} argument:".format(i))
+            print("{} : {}".format(i, arg))
             i += 1
