@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Done by the great Dinobi
 
 class Square:
     def __init__(self, size=0):
