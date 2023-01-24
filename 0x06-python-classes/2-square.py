@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-# Done by the great Dinobi
-"""A module that defines a square """
-
+# 0-square by the great Dinobi
+"""A module that defines a square"""
 class Square:
     def __init__(self, size=0):
         if not isinstance(size, int):
