@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#6-square by Dinobi
 """Modulue"""
 class Square:
     """defines a square"""
