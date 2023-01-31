@@ -3,7 +3,7 @@ import sys
 
 class Square:
     def __init__(self, size=0):
-        if not int(size):
+        if not isinstance(size, int):
             raise TypeError('size must be an integer')
         if size < 0:
             raise ValueError('size must be >= 0')
@@ -11,7 +11,7 @@ class Square:
     def size(self):
         return(self.__size)
     def size(self, value):
-        if not int(value):
+        if not isinstance(value, int):
             raise TypeError('size must be an integer')
         if value < 0:
             raise ValueError('size must be >= 0')
