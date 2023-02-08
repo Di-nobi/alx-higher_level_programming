@@ -10,4 +10,4 @@ def read_file(filename=""):
     """
     with open('filename', 'r' encoding="utf-8") as x:
         readf = x.read()
-    print(readf, end='')
+        print(readf, end='')
