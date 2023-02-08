@@ -7,6 +7,6 @@ def append_write(filename="", text=""):
     Raises
         Exception: when the file can be opened
     """
-    with open('filename', 'a', encoding="utf-8") as f:
+    with open(filename, 'a', encoding="utf-8") as f:
         append_file = f.write(text)
         return append_file

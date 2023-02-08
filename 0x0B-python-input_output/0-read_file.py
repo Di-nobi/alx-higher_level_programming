@@ -8,6 +8,6 @@ def read_file(filename=""):
     Raises
         Exception: when the file can be opened
     """
-    with open('filename', 'r' encoding="utf-8") as x:
+    with open(filename, 'r' encoding="utf-8") as x:
         readf = x.read()
         print(readf, end='')
