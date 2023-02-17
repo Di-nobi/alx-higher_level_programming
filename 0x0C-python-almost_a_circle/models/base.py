@@ -11,27 +11,25 @@ class Base:
     """
     __nb_objects = 0
     def __init__(self, id=None):
-         """Initialization of a Base instance.
+        """ Initialization of a Base instance.
         Args:
-            - id: id of the instance
-        """
-        if id is not None and not isinstance(id, int):
-            raise TypeError("Must be an integer")
-        return self.id = id
-    else:
-       Base. __nb_objects += 1
-       self.id = Base.__nb_objects
+        - id: id of the instance """
+        if id is not None:
+            self.id = id
+        else:
+            Base. __nb_objects += 1
+            self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
-         """Returns a JSON representation of list_dictionaries.
+        """Returns a JSON representation of list_dictionaries.
         Args:
             - list_dictionaries: list of dicts
         Returns: JSON representation of the list
         """
+
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        elif not isinstance(list_dictionaries, list) or not all(type(i) == dict for i in list_dictionaries)):
-            raise TypeError("list_dictionaries must be a list of dictionaries")
         return json.dumps(list_dictionaries)
     @classmethod
     def save_to_file(cls, list_objs):
@@ -51,10 +49,10 @@ class Base:
             js = cls.to_json_string([o.to_dictionary() for o in list_objs])
         filename = cls.__name__ + ".json"
         with open(filename, 'w') as f:
-                f.write(js)
+            f.write(js)
     @staticmethod
     def from_json_string(json_string):
-         """Returns the list of the JSON string representation json_string.
+        """Returns the list of the JSON string representation json_string.
         Args:
             - json_string: string to convert to list
         """
@@ -65,7 +63,7 @@ class Base:
                 raise TypeError("json_string must be a string")
             l = json.loads(json_string)
         return l
-     @classmethod
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """Serializes list_objs in CSV format
         and saves it to a file.
@@ -73,9 +71,7 @@ class Base:
             - list_objs: list of instances
         """
 
-        if (type(list_objs) != list and
-           list_objs is not None or
-           not all(isinstance(x, cls) for x in list_objs)):
+        if (type(list_objs) != list and list_objs is not None or not all(isinstance(x, cls) for x in list_objs)):
             raise TypeError("list_objs must be a list of instances")
 
         filename = cls.__name__ + ".csv"

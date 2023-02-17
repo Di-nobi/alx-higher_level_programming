@@ -33,7 +33,7 @@ class Square(Rectangle):
         """Returns a string representation of a Square instance."""
 
         s = "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.__width)
+                self.id, self.x, self.y, self.__width)
         return s
 
     @property
