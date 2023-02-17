@@ -57,14 +57,11 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError) as x:
             r0 = Rectangle(5)
-        self.assertEqual(
-            "__init__() missing 1 required positional argument: 'height'", str(
-                x.exception))
-        s = ("__init__() missing 2 required positional" +
-             " arguments: 'width' and 'height'")
+        self.assertEqual("__init__() missing 1 required positional argument: 'height'", str(x.exception))
+        s = ("__init__() missing 2 required positional" + " arguments: 'width' and 'height'")
         with self.assertRaises(TypeError) as x:
             r1 = Rectangle()
-        self.assertEqual(s, str(x.exception))
+            self.assertEqual(s, str(x.exception))
 
     def test_2_3(self):
         """Test class Rectangle: check for inheritance."""
@@ -91,13 +88,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual("y must be an integer", str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(0, 2)
-        self.assertEqual("width must be > 0", str(x.exception))
+        self.assertEqual("width must be >= 0", str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(2, 0)
-        self.assertEqual("height must be > 0", str(x.exception))
+        self.assertEqual("height must be >= 0", str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(2, -3)
-        self.assertEqual("height must be > 0", str(x.exception))
+        self.assertEqual("height must be >= 0", str(x.exception))
         with self.assertRaises(ValueError) as x:
             r = Rectangle(2, 5, -5, 6)
         self.assertEqual("x must be >= 0", str(x.exception))
@@ -122,12 +119,10 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle(3, 2)
             r1.area("Hello")
         self.assertEqual(
-            "area() takes 1 positional argument but 2 were given", str(
-                x.exception))
+                "area() takes 1 positional argument but 2 were given", str(x.exception))
 
     def test_5_0(self):
         """Test for public method display."""
-
         f = io.StringIO()
         r1 = Rectangle(4, 5)
         with contextlib.redirect_stdout(f):
@@ -143,12 +138,10 @@ class TestRectangle(unittest.TestCase):
             r1 = Rectangle(9, 6)
             r1.display(9)
         self.assertEqual(
-            "display() takes 1 positional argument but 2 were given", str(
-                x.exception))
+                "display() takes 1 positional argument but 2 were given", str(x.exception))
 
     def test_6_0(self):
         """Test for __str__ representation."""
-
         f = io.StringIO()
         r1 = Rectangle(4, 6, 2, 1, 12)
         with contextlib.redirect_stdout(f):
@@ -159,7 +152,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_7_0(self):
         """Test for public method display with x and y."""
-
         f = io.StringIO()
         r1 = Rectangle(2, 3, 2, 2)
         with contextlib.redirect_stdout(f):
@@ -170,7 +162,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_8_0(self):
         """Test for public method update."""
-
         r1 = Rectangle(10, 10, 10, 10)
         r1.update(89)
         self.assertEqual(r1.id, 89)
@@ -246,4 +237,3 @@ class TestRectangle(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-Footer
