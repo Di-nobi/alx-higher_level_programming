@@ -3,6 +3,7 @@
 Create a Rectangle class, inheriting from Base. 
 """
 from models.base import Base
+import json
 
 class Rectangle(Base):
     """Class describing a rectangle.
