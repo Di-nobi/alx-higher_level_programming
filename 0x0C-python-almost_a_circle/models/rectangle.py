@@ -6,7 +6,7 @@ from models.base import Base
 import json
 
 class Rectangle(Base):
-    """Class describing a rectangle.
+    """ Class describing a rectangle.
     Public instance methods:
         - area()
         - display()
@@ -45,6 +45,7 @@ class Rectangle(Base):
         return self.__y
     @width.setter
     def width(self, value):
+        """Sets the width attribute."""
         if not isinstance(value, int):
             raise TypeError('width must be an integer')
         if value <= 0:
@@ -53,6 +54,7 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
+        """Sets the height attribute."""
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         if value <= 0:
@@ -61,6 +63,7 @@ class Rectangle(Base):
 
     @x.setter
     def x(self, value):
+        """Sets the x attribute."""
         if not isinstance(value, int):
             raise TypeError('x must be an integer')
         if value < 0:
@@ -69,12 +72,16 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
+        """Sets the y attribute."""
         if not isinstance(value, int):
             raise TypeError('y must be an integer')
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
     def area(self):
+        """Calculates the area of a Rectangle instance.
+        Returns: area
+        """
         return self.__width * self.__height
     def display(self):
         """Prints the Rectangle instance with the # character."""
@@ -88,6 +95,8 @@ class Rectangle(Base):
                 print("#", end="")
             print()
     def __str__(self):
+        """Returns a string representation of a Rectangle instance."""
+
         s = "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
         return s
     def update(self, *args, **kwargs):
