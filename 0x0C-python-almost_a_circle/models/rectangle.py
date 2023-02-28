@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-
 """ Module rectangle.
-Create a Rectangle class, inheriting from Base. """
+Create a Rectangle class, inheriting from Base. 
+"""
 from models.base import Base
-import json
-import csv
+
 class Rectangle(Base):
-    """ Class that inherits
-    from Base """
+    """Class describing a rectangle.
+    Public instance methods:
+        - area()
+        - display()
+        - to_dictionary()
+        - update()
+    Inherits from Base.
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializes a Rectangle instance.
         Args:
