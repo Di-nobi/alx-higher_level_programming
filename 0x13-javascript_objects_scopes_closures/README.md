@@ -1,0 +1,1 @@
+Javascript scopes and objects
