@@ -6,7 +6,7 @@ argument from the database
 
 if __name__ == '__main__':
     import sys
-    from model_state import State, Base
+    from model_state import Base, State
     from sqlalchemy import (create_engine)
     from sqlalchemy.orm import sessionmaker
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
@@ -15,5 +15,6 @@ if __name__ == '__main__':
     state = session.query(State).filter(State.name == sys.argv[4]).first()
     try:
         print("{}".format(state.id))
-    except NameError:
+    except IndexError:
         print("Not found")
+    session.close()
