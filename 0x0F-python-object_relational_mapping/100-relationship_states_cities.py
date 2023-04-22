@@ -4,7 +4,7 @@ import sys
 from relationship_city import City
 from relationship_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 
 if __name__ == "__main__":
 
@@ -12,8 +12,8 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(engine)
     session = Session(engine)
-    newState = State(name="California")
-    newCity = City(name="San Francisco")
+    newState = State(name='California')
+    newCity = City(name='San Francisco')
     newState.cities.append(newCity)
     session.add(newState)
     session.add(newCity)
