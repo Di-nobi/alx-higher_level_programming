@@ -6,5 +6,6 @@ import requests
 import sys
 if __name__ == "__main__":
     url = sys.argv[1]
-    respond = requests.POST(url, data={'key': sys.argv[2]})
+    value = {'key': sys.argv[2]}
+    respond = requests.POST(url, data=value)
     print(respond.text)
