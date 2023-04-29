@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Python script that takes in a letter and sends
-a POST request to http://0.0.0.0:5000
-"""
+a POST request to http://0.0.0.0:5000"""
+
 import requests
 import sys
 if __name__ == "__main__":
@@ -12,6 +12,6 @@ if __name__ == "__main__":
         if respond == {}:
             print("No result")
         else:
-            print("[{}] {}".format(respond.get("id"), respond.get("name")
+            print("[{}] {}".format(respond.get("id"), respond.get("name")))
     except ValueError:
         print("Not a valid JSON")
