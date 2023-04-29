@@ -2,7 +2,7 @@
 """ A python script that checks for the error code"""
 
 import sys
-from urllib import error, requests
+from urllib import  requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
