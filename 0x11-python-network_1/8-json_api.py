@@ -8,7 +8,7 @@ if __name__ == "__main__":
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
     res = requests.post('http://0.0.0.0:5000', data={'q': letter})
     try:
-        respond = r.json()
+        respond = res.json()
         if respond == {}:
             print("No result")
         else:
