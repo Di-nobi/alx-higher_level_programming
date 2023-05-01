@@ -6,7 +6,7 @@ import requests
 import sys
 if __name__ == "__main__":
     letter = sys.argv[1] if len(sys.argv) > 1 else ""
-    res = requests.post('http://0.0.0.0:5000', data={'q': letter})
+    res = requests.post('http://0.0.0.0:5000/search_user', data={'q': letter})
     try:
         respond = res.json()
         if respond == {}:
