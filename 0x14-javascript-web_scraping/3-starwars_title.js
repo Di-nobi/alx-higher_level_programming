@@ -1,10 +1,8 @@
 #!/usr/bin/node
 
-const req = require('req');
-const url = 'https://swapi-api.hbtn.io/api/films/';
-const epi = process.argv[2];
-
-req.get(url + epi, function (err, response, body) {
+const request = require('request');
+const url = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+request(url, function (err, response, body) {
   if (err) {
     console.log(err);
   } else {
